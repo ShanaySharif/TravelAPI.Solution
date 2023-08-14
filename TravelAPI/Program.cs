@@ -1,11 +1,11 @@
-using CretaceousApi.Models;
+using TravelAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddDbContext<CretaceousApiContext>(
+builder.Services.AddDbContext<TravelAPIContext>(
                   dbContextOptions => dbContextOptions
                     .UseMySql(
                       builder.Configuration["ConnectionStrings:DefaultConnection"], 
