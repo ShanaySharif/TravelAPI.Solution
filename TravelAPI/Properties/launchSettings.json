@@ -9,7 +9,7 @@
       }
     },
     "profiles": {
-      "CretaceousApi": {
+      "TravelAPI": {
         "commandName": "Project",
         "dotnetRunMessages": true,
         "launchBrowser": true,
