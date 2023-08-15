@@ -7,10 +7,10 @@ using TravelAPI.Models;
 
 #nullable disable
 
-namespace TravelApi.Migrations
+namespace TravelAPI.Migrations
 {
     [DbContext(typeof(TravelAPIContext))]
-    [Migration("20230815131322_SeedData")]
+    [Migration("20230815153454_SeedData")]
     partial class SeedData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

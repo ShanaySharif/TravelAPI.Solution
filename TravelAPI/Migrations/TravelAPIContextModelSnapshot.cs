@@ -6,7 +6,7 @@ using TravelAPI.Models;
 
 #nullable disable
 
-namespace TravelApi.Migrations
+namespace TravelAPI.Migrations
 {
     [DbContext(typeof(TravelAPIContext))]
     partial class TravelAPIContextModelSnapshot : ModelSnapshot

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace TravelApi.Migrations
+namespace TravelAPI.Migrations
 {
     public partial class SeedData : Migration
     {
