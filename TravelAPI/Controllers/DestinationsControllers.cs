@@ -1,3 +1,6 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using TravelAPI.Models;
@@ -32,8 +35,20 @@ namespace TravelAPI.Controllers
       {
         query = query.Where(entry => entry.Rating == rating);
       }
-      return await query.ToListAsync();
+      var destinations = await query.ToListAsync();
+
+      if (destinations.Count == 0)
+      {
+        return NotFound();
+      }
+      return Ok(destinations);
     }
+    public IActionResult Get()
+    {
+      List<Destination> destinations = _db.Destinations.ToList();
+      return Ok(destinations);
+    }
+ 
     // GET: api/Destinations/5
     [HttpGet("{id}")]
     public async Task<ActionResult<Destination>> GetDestination(int id)
