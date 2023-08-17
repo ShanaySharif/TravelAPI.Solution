@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using TravelAPI.Models;
 
+
 namespace TravelAPI.Controllers
 {
+  [Authorize]
   [Route("api/[controller]")]
   [ApiController]
   public class DestinationsController : ControllerBase
@@ -17,6 +20,7 @@ namespace TravelAPI.Controllers
     {
       _db = db;
     }
+
     // GET api/destinations
     [HttpGet]
     public async Task<ActionResult<IEnumerable<Destination>>> Get (int destinationId, string cityName, string countryName, string review, int rating )
