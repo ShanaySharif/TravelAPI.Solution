@@ -39,19 +39,19 @@ namespace TravelAPI.Controllers
         }
         
         [HttpPost("login")]
-        public async Task<ActionResult<string>> Login(UserObject request)
+        public async Task<ActionResult<string>> Login(UserObject userLoggingIn)
         {
-            if (user.Username != request.Username)
+            if (user.Username != userLoggingIn.Username)
             {
                 return BadRequest("User not found.");
             }
-            if(!VerifyPasswordHash(request.Password, user.PasswordHash, user.PasswordSalt))
+            if(!VerifyPasswordHash(userLoggingIn.Password, user.PasswordHash, user.PasswordSalt))
             {
                 return BadRequest("Wrong password.");
             }
 
             string token = CreateToken(user);
-            return Ok(token );
+            return Ok(token);
         }
 
         private string CreateToken(User user)
