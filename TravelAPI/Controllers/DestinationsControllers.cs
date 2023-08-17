@@ -43,6 +43,7 @@ namespace TravelAPI.Controllers
       }
       return Ok(destinations);
     }
+    [HttpPost]
     public IActionResult Get()
     {
       List<Destination> destinations = _db.Destinations.ToList();
